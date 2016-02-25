@@ -22,9 +22,7 @@ module GoodData
 
         def run
           # GoodData.logger = Logger.new(STDOUT)
-          GoodData.connect(@login, @password, @server, {
-            :timeout => 30
-          })
+          GoodData.connect(@login, @password, {server: @server, timeout: 30})
           p = GoodData.use(@pid)
           logger = Logger.new('variable_uploader.log', 10, 1024000)
 
